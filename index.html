@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>CALCULATOR</title>
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!--Calculator container-->
+  <div class="calc">
+
+    <!--Calculator Display-->
+    <form>
+      <input class="calc-display">
+    </form name="form">
+    <div class="">
+      <input class="btn btn-lg btn-dark" type="button" name="" value="C" onclick="c()">
+      <input class="btn btn-lg btn-dark" type="button" name="" value="/" onclick="insrt('/')">
+      <input class="btn btn-lg btn-dark e" type="button" name="" value="<" onclick="del()">
+
+    </div>
+
+    <!--Caclulator Button Rows-->
+    <!--Row-->
+    <div class="">
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="7" onclick="insrt(7)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="8" onclick="insrt(8)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="9" onclick="insrt(9)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="x" onclick="insrt('*')"> </td>
+    </div>
+
+   <!--Row-->
+    <div class="">
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="4" onclick="insrt(4)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="5" onclick="insrt(5)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="6" onclick="insrt(6)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="-" onclick="insrt('-')"> </td>
+    </div>
+
+    <!--Row-->
+    <div class="">
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="1" onclick="insrt(1)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="2" onclick="insrt(2)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="3" onclick="insrt(3)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="+" onclick="insrt('+')"> </td>
+    </div>
+
+    <!--Row-->
+    <div class="">
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="0" onclick="insrt(0)"> </td>
+      <td> <input class="btn btn-lg btn-dark" type="button" name="" value="." onclick="insrt('.')"> </td>
+      <td> <input class="btn btn-lg btn-primary e" type="button" name="" value="=" onclick="eql()"> </td>
+    </div>
+
+  </div>
+
+
+  <!--SCripts-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!--Javascript-->
+  <script type="text/javascript">
+
+    /*Insert Characters*/
+    function insrt(num) {
+      $('.calc-display').val($('.calc-display').val() + num);
+    }
+
+    /* Evaluate Sum */
+    function eql() {
+      $('.calc-display').val(eval($('.calc-display').val()));
+    }
+    /* Clear Input Field */
+    function c() {
+      $('.calc-display').val('');
+    }
+    
+    /* Delete Characters */
+    function del() {
+      value = $('.calc-display').val()
+      $('.calc-display').val(value.substring(0, value.length - 1));
+    }
+
+  </script>
+
+</body>
+
+</html>
